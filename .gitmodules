@@ -1,0 +1,6 @@
+[submodule ".devcontainer"]
+	path = .devcontainer
+	url = https://github.com/islandcontroller/armcm-devcontainer
+[submodule "Controller/STM32F1xx"]
+	path = Controller/STM32F1xx
+	url = https://github.com/islandcontroller/mculib-controller-stm32f1xx
