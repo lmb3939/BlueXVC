@@ -6,7 +6,7 @@ set(CMAKE_TOOLCHAIN_FILE $ENV{CMAKE_CONFIGS_PATH}/gcc-arm-none-eabi.cmake)
 # Project configuration
 project(BlueXVC)
 set(EXECUTABLE ${PROJECT_NAME}.elf)
-set(LINKER_FILE ${CMAKE_SOURCE_DIR}/Controller/STM32F1xx/linker_script_stm32f103xb.ld)
+set(LINKER_FILE ${CMAKE_SOURCE_DIR}/Controller/STM32F1xx/linker_script_stm32f103x8.ld)
 
 enable_language(C ASM)
 set(CMAKE_C_STANDARD 23)
