@@ -48,7 +48,7 @@ target_compile_options(${EXECUTABLE} PRIVATE
         -Wall
         -Wextra
         
-        -Og
+        -O1
         -g
 )
 

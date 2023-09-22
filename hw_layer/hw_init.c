@@ -1,34 +1,33 @@
 /*!****************************************************************************
- * @brief
- * main.c
+ * @file
+ * hw_init.c
  * 
  * @brief
- * Main program entry point
+ * Hardware Layer - Initialisation
  * 
- * @date  20.09.2023
+ * @date  21.09.2023
  ******************************************************************************/
 
 /*- Header files -------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
-#include "hw_init.h"
+#include "hw_clk.h"
 #include "hw_gpio.h"
+#include "hw_irq.h"
+#include "hw_init.h"
 
 
 /*!****************************************************************************
  * @brief
- * Main program entry point
+ * Hardware Layer initialisation
  * 
- * @date  20.09.2023
+ * @date  21.09.2023
  ******************************************************************************/
-int main(void)
+void vHW_Init(void)
 {
-  /* Initialise hardware                                  */
-  vHW_Init();
+  vHW_ClkInit();
+  vHW_GpioInit();
+  vHW_IrqInit();
 
-  /* Main program loop                                    */
-  while (1)
-  {
-    HAL_Delay(500u);
-    vHW_GpioToggleLed();
-  }
+  /* Initialise STM32 HAL                                 */
+  HAL_Init();
 }

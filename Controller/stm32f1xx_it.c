@@ -16,6 +16,7 @@
  * types.
  * 
  * @date  21.08.2023
+ * @date  22.09.2023  Added HardFault debugger breakpoint; Added USB LP IRQ
  ******************************************************************************/
 
 /*- Header files -------------------------------------------------------------*/
@@ -40,6 +41,9 @@ void NMI_Handler(void)
  ******************************************************************************/
 void HardFault_Handler(void)
 {
+  /* Signal debugger                                      */
+  __BKPT();
+
   while (1)
   {
   }
@@ -125,4 +129,14 @@ void SysTick_Handler(void)
   extern void HAL_IncTick(void);
 
   HAL_IncTick();
+}
+
+/*!*****************************************************************************
+ * @brief
+ * USB Low Priority Interrupt
+ * 
+ * @date  22.09.2023
+ ******************************************************************************/
+void USB_LP_CAN1_RX0_IRQHandler(void)
+{
 }
